@@ -31,6 +31,8 @@
 		A6FCCC9118CBF3BE0057FDA1 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6FCCC9018CBF3BE0057FDA1 /* Security.framework */; };
 		A6FCCC9318CBF3C70057FDA1 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6FCCC9218CBF3C70057FDA1 /* StoreKit.framework */; };
 		A6FCCC9518CBF3D00057FDA1 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6FCCC9418CBF3D00057FDA1 /* SystemConfiguration.framework */; };
+		A6FCCC9818CBF61F0057FDA1 /* GinkgoDeliveryManagerOrdersTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A6FCCC9718CBF61F0057FDA1 /* GinkgoDeliveryManagerOrdersTableViewController.m */; };
+		A6FCCC9B18CBF63C0057FDA1 /* GinkgoDeliveryManagerDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A6FCCC9A18CBF63C0057FDA1 /* GinkgoDeliveryManagerDetailsViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +75,10 @@
 		A6FCCC9018CBF3BE0057FDA1 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		A6FCCC9218CBF3C70057FDA1 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		A6FCCC9418CBF3D00057FDA1 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		A6FCCC9618CBF61F0057FDA1 /* GinkgoDeliveryManagerOrdersTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GinkgoDeliveryManagerOrdersTableViewController.h; sourceTree = "<group>"; };
+		A6FCCC9718CBF61F0057FDA1 /* GinkgoDeliveryManagerOrdersTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GinkgoDeliveryManagerOrdersTableViewController.m; sourceTree = "<group>"; };
+		A6FCCC9918CBF63C0057FDA1 /* GinkgoDeliveryManagerDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GinkgoDeliveryManagerDetailsViewController.h; sourceTree = "<group>"; };
+		A6FCCC9A18CBF63C0057FDA1 /* GinkgoDeliveryManagerDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GinkgoDeliveryManagerDetailsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,6 +158,10 @@
 		A6FCCC5318CBF1C50057FDA1 /* GinkgoDeliveryManager */ = {
 			isa = PBXGroup;
 			children = (
+				A6FCCC9918CBF63C0057FDA1 /* GinkgoDeliveryManagerDetailsViewController.h */,
+				A6FCCC9A18CBF63C0057FDA1 /* GinkgoDeliveryManagerDetailsViewController.m */,
+				A6FCCC9618CBF61F0057FDA1 /* GinkgoDeliveryManagerOrdersTableViewController.h */,
+				A6FCCC9718CBF61F0057FDA1 /* GinkgoDeliveryManagerOrdersTableViewController.m */,
 				A6FCCC5C18CBF1C50057FDA1 /* GinkgoDeliveryManagerAppDelegate.h */,
 				A6FCCC5D18CBF1C50057FDA1 /* GinkgoDeliveryManagerAppDelegate.m */,
 				A6FCCC5F18CBF1C50057FDA1 /* Main.storyboard */,
@@ -291,8 +301,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				A6FCCC5A18CBF1C50057FDA1 /* main.m in Sources */,
+				A6FCCC9B18CBF63C0057FDA1 /* GinkgoDeliveryManagerDetailsViewController.m in Sources */,
 				A6FCCC5E18CBF1C50057FDA1 /* GinkgoDeliveryManagerAppDelegate.m in Sources */,
 				A6FCCC6418CBF1C50057FDA1 /* GinkgoDeliveryManagerViewController.m in Sources */,
+				A6FCCC9818CBF61F0057FDA1 /* GinkgoDeliveryManagerOrdersTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

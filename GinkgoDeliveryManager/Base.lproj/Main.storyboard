@@ -4,10 +4,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Ginkgo Delivery Manager Details View Controller-->
         <scene sceneID="5G4-P7-04V">
             <objects>
-                <viewController id="gBg-OE-fLr" sceneMemberID="viewController">
+                <viewController id="gBg-OE-fLr" customClass="GinkgoDeliveryManagerDetailsViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Kim-xB-Ir5"/>
                         <viewControllerLayoutGuide type="bottom" id="1bR-Ny-IrU"/>
@@ -15,6 +15,15 @@
                     <view key="view" contentMode="scaleToFill" id="0Tr-0u-gLV">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Pq2-2c-76N">
+                                <rect key="frame" x="0.0" y="23" width="768" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="订单详情" id="Re0-CG-xg1"/>
+                                </items>
+                            </navigationBar>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <toolbarItems/>
@@ -23,17 +32,22 @@
             </objects>
             <point key="canvasLocation" x="880" y="473"/>
         </scene>
-        <!--Table View Controller - Root View Controller-->
+        <!--Ginkgo Delivery Manager Orders Table View Controller - 订单-->
         <scene sceneID="oe4-R9-u94">
             <objects>
-                <tableViewController clearsSelectionOnViewWillAppear="NO" id="MQ5-Lo-x9R" sceneMemberID="viewController">
+                <tableViewController clearsSelectionOnViewWillAppear="NO" id="MQ5-Lo-x9R" customClass="GinkgoDeliveryManagerOrdersTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Na9-B9-eSE">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" placeholder="搜索订单" id="8Yd-zh-YxP">
+                            <rect key="frame" x="0.0" y="64" width="320" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </searchBar>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="klX-nW-dkQ">
-                                <rect key="frame" x="0.0" y="86" width="320" height="44"/>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="orderCell" id="klX-nW-dkQ">
+                                <rect key="frame" x="0.0" y="130" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="klX-nW-dkQ" id="AoB-RG-fbD">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
@@ -46,7 +60,7 @@
                             <outlet property="delegate" destination="MQ5-Lo-x9R" id="O5S-DQ-Jwo"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="xWg-cS-Bva"/>
+                    <navigationItem key="navigationItem" title="订单" id="xWg-cS-Bva"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iEl-Ia-kxZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
