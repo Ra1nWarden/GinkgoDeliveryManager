@@ -36,6 +36,7 @@
                     <toolbarItems/>
                     <connections>
                         <outlet property="name" destination="5NE-Cw-P4d" id="MmE-KM-lHf"/>
+                        <outlet property="topBar" destination="Re0-CG-xg1" id="s4R-bD-HAp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="46v-cT-tI4" userLabel="First Responder" sceneMemberID="firstResponder"/>
