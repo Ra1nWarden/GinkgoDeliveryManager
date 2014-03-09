@@ -7,12 +7,16 @@
 //
 
 #import "GinkgoDeliveryManagerAppDelegate.h"
+#import <Parse/Parse.h>
 
 @implementation GinkgoDeliveryManagerAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    [Parse setApplicationId:@"w9jkBo7rPSAK6mld5HTLCndQhCoY6g0BgLD8Cwvi"
+                  clientKey:@"9243kDKt4VVCzfzsubvfUHmSNBF0NTLKmx4tvpJn"];
+    [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
     return YES;
 }
 							
