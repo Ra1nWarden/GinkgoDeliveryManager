@@ -9,9 +9,12 @@
 #import <UIKit/UIKit.h>
 #import <Parse/Parse.h>
 
-@interface GinkgoDeliveryManagerOrdersTableViewController : UITableViewController
+@interface GinkgoDeliveryManagerOrdersTableViewController : UITableViewController <UISearchBarDelegate, UISearchDisplayDelegate>
 
-@property (nonatomic) PFQuery * query;
-@property (nonatomic) NSArray * orders;
+@property (nonatomic) PFQuery *query;
+@property (nonatomic) NSArray *orders;
+@property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
+@property (nonatomic) UISearchDisplayController *searchResult;
+@property (nonatomic) NSMutableArray *filteredResults;
 
 @end

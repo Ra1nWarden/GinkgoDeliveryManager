@@ -16,19 +16,39 @@
 
 @synthesize query = _query;
 @synthesize orders = _orders;
+@synthesize searchResult = _searchResult;
+@synthesize searchBar;
+@synthesize filteredResults = _filteredResults;
 
--(PFQuery *)query {
+- (NSMutableArray *)filteredResults {
+    if(!_filteredResults) {
+        _filteredResults = [[NSMutableArray alloc] initWithCapacity:[self.orders count]];
+    }
+    return _filteredResults;
+}
+
+- (PFQuery *)query {
     if(!_query) {
         _query = [PFQuery queryWithClassName:@"Order"];
     }
     return _query;
 }
 
--(NSArray *)orders {
+- (NSArray *)orders {
     if(!_orders) {
         _orders = [self.query findObjects];
     }
     return _orders;
+}
+
+- (UISearchDisplayController *)searchResult {
+    if(!_searchResult) {
+        _searchResult = [[UISearchDisplayController alloc] initWithSearchBar:self.searchBar contentsController:self];
+        _searchResult.delegate = self;
+        _searchResult.searchResultsDelegate = self;
+        _searchResult.searchResultsDataSource = self;
+    }
+    return _searchResult;
 }
 
 - (id)initWithStyle:(UITableViewStyle)style
@@ -43,7 +63,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
  
@@ -55,6 +74,22 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (BOOL)matchPFObject:(PFObject *)obj withSearchText:(NSString *)searchText {
+    NSString * name = [obj valueForKey:@"name"];
+    NSPredicate * pred = [NSPredicate predicateWithFormat:@"SELF contains[c] %@", searchText];
+    return [pred evaluateWithObject:name];
+}
+
+- (BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(NSString *)searchString {
+    [self.filteredResults removeAllObjects];
+    for (PFObject* eachObj in self.orders) {
+        if([self matchPFObject:eachObj withSearchText:searchString]) {
+            [self.filteredResults addObject:eachObj];
+        }
+    };
+    return YES;
 }
 
 #pragma mark - Table view data source
@@ -70,20 +105,36 @@
 {
 
     // Return the number of rows in the section.
-    return [self.orders count];
+    if(tableView == self.searchResult.searchResultsTableView) {
+        return [self.filteredResults count];
+    }
+    else {
+        return [self.orders count];
+
+    }
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"orderCell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    static NSString *CellIdentifier = @"Cell";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
     if(cell == nil) {
-        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleValue2 reuseIdentifier:CellIdentifier];
+        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
     }
-    PFObject* obj = [self.orders objectAtIndex:indexPath.row];
-    cell.textLabel.text = [obj objectForKey:@"name"];
-    cell.detailTextLabel.text = [obj objectForKey:@"createdAt"];
+    PFObject* obj;
+    if(tableView == self.searchResult.searchResultsTableView) {
+        obj = [self.filteredResults objectAtIndex:indexPath.row];
+    }
+    else {
+        obj = [self.orders objectAtIndex:indexPath.row];
+    }
+    cell.textLabel.text = [obj valueForKey:@"name"];
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateStyle:NSDateFormatterMediumStyle];
+    
+    NSString * dateInString = [dateFormatter stringFromDate:[obj valueForKey:@"createdAt"]];
+    cell.detailTextLabel.text = dateInString;
     return cell;
 }
 
