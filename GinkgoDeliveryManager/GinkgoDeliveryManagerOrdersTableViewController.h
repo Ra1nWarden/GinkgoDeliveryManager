@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <Parse/Parse.h>
+#import "GinkgoDeliveryManagerDetailsViewController.h"
 
 @interface GinkgoDeliveryManagerOrdersTableViewController : UITableViewController <UISearchBarDelegate, UISearchDisplayDelegate>
 
@@ -16,5 +17,6 @@
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 @property (nonatomic) UISearchDisplayController *searchResult;
 @property (nonatomic) NSMutableArray *filteredResults;
+@property (nonatomic) GinkgoDeliveryManagerDetailsViewController *detailViewController;
 
 @end

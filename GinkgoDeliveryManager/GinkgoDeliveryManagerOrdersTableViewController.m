@@ -19,6 +19,14 @@
 @synthesize searchResult = _searchResult;
 @synthesize searchBar;
 @synthesize filteredResults = _filteredResults;
+@synthesize detailViewController = _detailViewController;
+
+- (GinkgoDeliveryManagerDetailsViewController *)detailViewController {
+    if(!_detailViewController) {
+        _detailViewController = [self.splitViewController.viewControllers lastObject];
+    }
+    return _detailViewController;
+}
 
 - (NSMutableArray *)filteredResults {
     if(!_filteredResults) {
@@ -136,6 +144,19 @@
     NSString * dateInString = [dateFormatter stringFromDate:[obj valueForKey:@"createdAt"]];
     cell.detailTextLabel.text = dateInString;
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    PFObject * obj;
+    if (tableView == self.searchResult.searchResultsTableView) {
+        obj = [self.filteredResults objectAtIndex:indexPath.row];
+    }
+    else {
+        obj = [self.orders objectAtIndex:indexPath.row];
+    }
+    self.detailViewController.object = obj;
+//    [self.detailViewController.view setNeedsDisplay];
+    NSLog(@"just called set needs display");
 }
 
 /*
