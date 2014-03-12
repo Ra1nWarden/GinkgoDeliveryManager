@@ -60,13 +60,11 @@
 
 - (void)configureView {
     if(self.object != nil) {
-        NSLog(@"some item");
         self.emptyLabel.hidden = YES;
         self.orderDetail.hidden = NO;
         [self.orderDetail reloadData];
     }
     else {
-        NSLog(@"no item = object is nil");
         self.emptyLabel.hidden = NO;
         self.orderDetail.hidden = YES;
     }
@@ -119,12 +117,12 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     // 订单信息
     if (section == 0) {
-        return 2;
+        return 3;
     }
     // 顾客信息
     else if (section == 1) {
-        // 姓名，电话，地址
-        return 3;
+        // 姓名，电话，地址，其他
+        return 4;
     }
     // 订单内容
     else if (section == 2) {
@@ -144,7 +142,11 @@
     }
     // 订单信息
     if(indexPath.section == 0) {
-        if(indexPath.row == 0) {
+        if (indexPath.row == 0) {
+            cell.textLabel.text = @"订单号";
+            cell.detailTextLabel.text = [[self.object valueForKey:@"orderNo"] stringValue];
+        }
+        else if(indexPath.row == 1) {
             cell.textLabel.text = @"订单类别";
             NSString * kind = [self.object valueForKey:@"method"];
             if ([kind isEqualToString:@"Lunch"]) {
@@ -157,7 +159,7 @@
                 cell.detailTextLabel.text = @"店内取货";
             }
         }
-        else if (indexPath.row == 1) {
+        else {
             cell.textLabel.text = @"下单时间";
             NSDateFormatter * formatter = [[NSDateFormatter alloc] init];
             [formatter setDateFormat:@"yyyy-MM-dd HH:mm"];
@@ -175,7 +177,7 @@
             cell.textLabel.text = @"电话";
             cell.detailTextLabel.text = [self.object valueForKey:@"phoneNo"];
         }
-        else {
+        else if (indexPath.row == 2){
             cell.textLabel.text = @"地址";
             cell.detailTextLabel.text = [self.object valueForKey:@"address"];
             if ([[self.object valueForKey:@"method"] isEqualToString:@"Delivery"]) {
@@ -183,11 +185,15 @@
                 cell.detailTextLabel.lineBreakMode = NSLineBreakByWordWrapping;
             }
         }
+        else {
+            cell.textLabel.text = @"其他";
+            cell.detailTextLabel.text = [self.object valueForKey:@"specialIns"];
+        }
     }
     // 订单内容
     else if (indexPath.section == 2){
         NSDictionary * currentDish = [self.orderList objectAtIndex:indexPath.row];
-        cell.textLabel.text = [currentDish objectForKey:@"Name"];
+        cell.textLabel.text = [currentDish objectForKey:@"NameChs"];
         cell.detailTextLabel.text = [[currentDish objectForKey:@"Quantity"] stringValue];
     }
     // 金额
