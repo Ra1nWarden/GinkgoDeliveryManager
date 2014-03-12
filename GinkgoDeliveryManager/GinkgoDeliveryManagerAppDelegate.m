@@ -7,6 +7,7 @@
 //
 
 #import "GinkgoDeliveryManagerAppDelegate.h"
+#import "GinkgoDeliveryManagerSplitViewController.h"
 #import <Parse/Parse.h>
 
 @implementation GinkgoDeliveryManagerAppDelegate
@@ -17,7 +18,7 @@
     [Parse setApplicationId:@"w9jkBo7rPSAK6mld5HTLCndQhCoY6g0BgLD8Cwvi"
                   clientKey:@"9243kDKt4VVCzfzsubvfUHmSNBF0NTLKmx4tvpJn"];
     [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
-    UISplitViewController *splitViewController = (UISplitViewController *)self.window.rootViewController;
+    GinkgoDeliveryManagerSplitViewController *splitViewController = (GinkgoDeliveryManagerSplitViewController *)self.window.rootViewController;
     splitViewController.delegate = [splitViewController.viewControllers lastObject];
     return YES;
 }

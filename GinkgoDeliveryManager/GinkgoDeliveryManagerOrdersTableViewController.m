@@ -155,8 +155,6 @@
         obj = [self.orders objectAtIndex:indexPath.row];
     }
     self.detailViewController.object = obj;
-//    [self.detailViewController.view setNeedsDisplay];
-    NSLog(@"just called set needs display");
 }
 
 /*

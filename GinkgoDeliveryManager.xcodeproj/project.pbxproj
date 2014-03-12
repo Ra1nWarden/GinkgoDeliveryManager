@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A664855B18CFE8CD002FB7F9 /* GinkgoDeliveryManagerSplitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A664855A18CFE8CD002FB7F9 /* GinkgoDeliveryManagerSplitViewController.m */; };
+		A664855D18CFE933002FB7F9 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A664855C18CFE933002FB7F9 /* Parse.framework */; };
+		A664863D18CFF4BA002FB7F9 /* Download.png in Resources */ = {isa = PBXBuildFile; fileRef = A664857118CFF4BA002FB7F9 /* Download.png */; };
+		A664864418CFF4BA002FB7F9 /* Favorites.png in Resources */ = {isa = PBXBuildFile; fileRef = A664857818CFF4BA002FB7F9 /* Favorites.png */; };
+		A664866418CFF4BA002FB7F9 /* New.png in Resources */ = {isa = PBXBuildFile; fileRef = A664859818CFF4BA002FB7F9 /* New.png */; };
+		A664867D18CFF4BA002FB7F9 /* Signpost.png in Resources */ = {isa = PBXBuildFile; fileRef = A66485B118CFF4BA002FB7F9 /* Signpost.png */; };
+		A664868618CFF4BA002FB7F9 /* Trash.png in Resources */ = {isa = PBXBuildFile; fileRef = A66485BA18CFF4BA002FB7F9 /* Trash.png */; };
 		A6FCCC4E18CBF1C50057FDA1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6FCCC4D18CBF1C50057FDA1 /* Foundation.framework */; };
 		A6FCCC5018CBF1C50057FDA1 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6FCCC4F18CBF1C50057FDA1 /* CoreGraphics.framework */; };
 		A6FCCC5218CBF1C50057FDA1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6FCCC5118CBF1C50057FDA1 /* UIKit.framework */; };
@@ -46,6 +53,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A664855918CFE8CD002FB7F9 /* GinkgoDeliveryManagerSplitViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GinkgoDeliveryManagerSplitViewController.h; sourceTree = "<group>"; };
+		A664855A18CFE8CD002FB7F9 /* GinkgoDeliveryManagerSplitViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GinkgoDeliveryManagerSplitViewController.m; sourceTree = "<group>"; };
+		A664855C18CFE933002FB7F9 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
+		A664857118CFF4BA002FB7F9 /* Download.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Download.png; sourceTree = "<group>"; };
+		A664857818CFF4BA002FB7F9 /* Favorites.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Favorites.png; sourceTree = "<group>"; };
+		A664859818CFF4BA002FB7F9 /* New.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = New.png; sourceTree = "<group>"; };
+		A66485B118CFF4BA002FB7F9 /* Signpost.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Signpost.png; sourceTree = "<group>"; };
+		A66485BA18CFF4BA002FB7F9 /* Trash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Trash.png; sourceTree = "<group>"; };
 		A6FCCC4A18CBF1C50057FDA1 /* GinkgoDeliveryManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GinkgoDeliveryManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6FCCC4D18CBF1C50057FDA1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		A6FCCC4F18CBF1C50057FDA1 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -96,6 +111,7 @@
 				A6FCCC5018CBF1C50057FDA1 /* CoreGraphics.framework in Frameworks */,
 				A6FCCC8718CBF3820057FDA1 /* CFNetwork.framework in Frameworks */,
 				A6FCCC8518CBF3790057FDA1 /* AudioToolbox.framework in Frameworks */,
+				A664855D18CFE933002FB7F9 /* Parse.framework in Frameworks */,
 				A6FCCC5218CBF1C50057FDA1 /* UIKit.framework in Frameworks */,
 				A6FCCC8318CBF3620057FDA1 /* Parse.framework in Frameworks */,
 				A6FCCC4E18CBF1C50057FDA1 /* Foundation.framework in Frameworks */,
@@ -115,9 +131,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A664855E18CFF4BA002FB7F9 /* icons */ = {
+			isa = PBXGroup;
+			children = (
+				A664855F18CFF4BA002FB7F9 /* 1x_normal */,
+			);
+			name = icons;
+			path = pixellove_free;
+			sourceTree = "<group>";
+		};
+		A664855F18CFF4BA002FB7F9 /* 1x_normal */ = {
+			isa = PBXGroup;
+			children = (
+				A664857118CFF4BA002FB7F9 /* Download.png */,
+				A664857818CFF4BA002FB7F9 /* Favorites.png */,
+				A664859818CFF4BA002FB7F9 /* New.png */,
+				A66485B118CFF4BA002FB7F9 /* Signpost.png */,
+				A66485BA18CFF4BA002FB7F9 /* Trash.png */,
+			);
+			path = 1x_normal;
+			sourceTree = "<group>";
+		};
 		A6FCCC4118CBF1C50057FDA1 = {
 			isa = PBXGroup;
 			children = (
+				A664855E18CFF4BA002FB7F9 /* icons */,
 				A6FCCC5318CBF1C50057FDA1 /* GinkgoDeliveryManager */,
 				A6FCCC7218CBF1C50057FDA1 /* GinkgoDeliveryManagerTests */,
 				A6FCCC4C18CBF1C50057FDA1 /* Frameworks */,
@@ -137,6 +175,7 @@
 		A6FCCC4C18CBF1C50057FDA1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A664855C18CFE933002FB7F9 /* Parse.framework */,
 				A6FCCC9418CBF3D00057FDA1 /* SystemConfiguration.framework */,
 				A6FCCC9218CBF3C70057FDA1 /* StoreKit.framework */,
 				A6FCCC9018CBF3BE0057FDA1 /* Security.framework */,
@@ -165,6 +204,8 @@
 				A6FCCC5C18CBF1C50057FDA1 /* GinkgoDeliveryManagerAppDelegate.h */,
 				A6FCCC5D18CBF1C50057FDA1 /* GinkgoDeliveryManagerAppDelegate.m */,
 				A6FCCC5F18CBF1C50057FDA1 /* Main.storyboard */,
+				A664855918CFE8CD002FB7F9 /* GinkgoDeliveryManagerSplitViewController.h */,
+				A664855A18CFE8CD002FB7F9 /* GinkgoDeliveryManagerSplitViewController.m */,
 				A6FCCC6218CBF1C50057FDA1 /* GinkgoDeliveryManagerViewController.h */,
 				A6FCCC6318CBF1C50057FDA1 /* GinkgoDeliveryManagerViewController.m */,
 				A6FCCC6518CBF1C50057FDA1 /* Images.xcassets */,
@@ -279,9 +320,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A664863D18CFF4BA002FB7F9 /* Download.png in Resources */,
 				A6FCCC6618CBF1C50057FDA1 /* Images.xcassets in Resources */,
+				A664867D18CFF4BA002FB7F9 /* Signpost.png in Resources */,
 				A6FCCC5818CBF1C50057FDA1 /* InfoPlist.strings in Resources */,
+				A664864418CFF4BA002FB7F9 /* Favorites.png in Resources */,
 				A6FCCC6118CBF1C50057FDA1 /* Main.storyboard in Resources */,
+				A664868618CFF4BA002FB7F9 /* Trash.png in Resources */,
+				A664866418CFF4BA002FB7F9 /* New.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -304,6 +350,7 @@
 				A6FCCC9B18CBF63C0057FDA1 /* GinkgoDeliveryManagerDetailsViewController.m in Sources */,
 				A6FCCC5E18CBF1C50057FDA1 /* GinkgoDeliveryManagerAppDelegate.m in Sources */,
 				A6FCCC6418CBF1C50057FDA1 /* GinkgoDeliveryManagerViewController.m in Sources */,
+				A664855B18CFE8CD002FB7F9 /* GinkgoDeliveryManagerSplitViewController.m in Sources */,
 				A6FCCC9818CBF61F0057FDA1 /* GinkgoDeliveryManagerOrdersTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -523,6 +570,7 @@
 				A6FCCC7E18CBF1C50057FDA1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A6FCCC7F18CBF1C50057FDA1 /* Build configuration list for PBXNativeTarget "GinkgoDeliveryManagerTests" */ = {
 			isa = XCConfigurationList;
@@ -531,6 +579,7 @@
 				A6FCCC8118CBF1C50057FDA1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
