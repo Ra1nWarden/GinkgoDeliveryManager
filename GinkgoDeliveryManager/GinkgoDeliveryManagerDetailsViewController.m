@@ -54,6 +54,7 @@
         // Custom initialization
         self.orderDetail.delegate = self;
         self.orderDetail.dataSource = self;
+        self.btmTabBar.delegate = self;
     }
     return self;
 }
@@ -62,11 +63,32 @@
     if(self.object != nil) {
         self.emptyLabel.hidden = YES;
         self.orderDetail.hidden = NO;
+        self.btmTabBar.hidden = NO;
         [self.orderDetail reloadData];
+        NSLog(@"number of items is %d", [self.btmTabBar.items count]);
+        
+        NSString * order_status = [self.object valueForKey:@"status"];
+        if ([order_status isEqualToString:@"Pending"]) {
+            [self.btmTabBar setSelectedItem:[self.btmTabBar.items objectAtIndex:0]];
+        }
+        else if ([order_status isEqualToString:@"Accepted"]) {
+            [self.btmTabBar setSelectedItem:[self.btmTabBar.items objectAtIndex:1]];
+        }
+        else if ([order_status isEqualToString:@"Ready"]) {
+            [self.btmTabBar setSelectedItem:[self.btmTabBar.items objectAtIndex:2]];
+        }
+        else if ([order_status isEqualToString:@"Completed"]) {
+            [self.btmTabBar setSelectedItem:[self.btmTabBar.items objectAtIndex:3]];
+        }
+        else if ([order_status isEqualToString:@"Voided"]) {
+            [self.btmTabBar setSelectedItem:[self.btmTabBar.items objectAtIndex:4]];
+        }
+
     }
     else {
         self.emptyLabel.hidden = NO;
         self.orderDetail.hidden = YES;
+        self.btmTabBar.hidden = YES;
     }
 }
 
@@ -219,6 +241,29 @@
 
     }
     return cell;
+}
+
+- (void)tabBar:(UITabBar *)tabBar didSelectItem:(UITabBarItem *)item {
+    if (item.tag == 0) {
+        self.object[@"status"] = @"Pending";
+        [self.object saveInBackground];
+    }
+    else if (item.tag == 1) {
+        self.object[@"status"] = @"Accepted";
+        [self.object saveInBackground];
+    }
+    else if (item.tag == 2) {
+        self.object[@"status"] = @"Ready";
+        [self.object saveInBackground];
+    }
+    else if (item.tag == 3) {
+        self.object[@"status"] = @"Completed";
+        [self.object saveInBackground];
+    }
+    else {
+        self.object[@"status"] = @"Voided";
+        [self.object saveInBackground];
+    }
 }
 
 @end

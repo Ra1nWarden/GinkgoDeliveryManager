@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <Parse/Parse.h>
 
-@interface GinkgoDeliveryManagerDetailsViewController : UIViewController <UISplitViewControllerDelegate, UITableViewDataSource, UITableViewDelegate>
+@interface GinkgoDeliveryManagerDetailsViewController : UIViewController <UISplitViewControllerDelegate, UITableViewDataSource, UITableViewDelegate, UITabBarDelegate>
 
 @property (nonatomic) PFObject * object;
 @property (nonatomic) NSArray * orderList;

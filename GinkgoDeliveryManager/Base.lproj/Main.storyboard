@@ -36,11 +36,14 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <items>
                                     <tabBarItem title="下单" image="New.png" id="lW5-AX-zNK"/>
-                                    <tabBarItem title="接单" image="Download.png" id="yGE-dD-ZfR"/>
-                                    <tabBarItem title="发货" image="Signpost.png" id="y33-D3-fsY"/>
-                                    <tabBarItem title="完成" image="Favorites.png" id="Blk-XR-Rgy"/>
-                                    <tabBarItem title="拒单" image="Trash.png" id="3RP-bA-WDF"/>
+                                    <tabBarItem tag="1" title="接单" image="Download.png" id="yGE-dD-ZfR"/>
+                                    <tabBarItem tag="2" title="发货" image="Signpost.png" id="y33-D3-fsY"/>
+                                    <tabBarItem tag="3" title="完成" image="Favorites.png" id="Blk-XR-Rgy"/>
+                                    <tabBarItem tag="4" title="拒单" image="Trash.png" id="3RP-bA-WDF"/>
                                 </items>
+                                <connections>
+                                    <outlet property="delegate" destination="gBg-OE-fLr" id="dph-Ht-CHz"/>
+                                </connections>
                             </tabBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="vMP-iw-GKQ">
                                 <rect key="frame" x="0.0" y="67" width="768" height="903"/>
